@@ -123,33 +123,31 @@ $total_item = $valor * $quantidade;
             <?php } ?>
             </div>
         </div>
-        <div class="humberger__menu__widget">
-
-
-        </div>
+        <div class="humberger__menu__widget"></div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                 <li class="active"><a href="./index.php">Início</a></li>
-                      <li><a href="categorias.php">Categorias</a></li>
-                     <li><a href="#">Produtos</a>
-                        <ul class="header__menu__dropdown">
-                            <li><a href="produtos.php">Produtos</a></li>
-
-                            <li><a href="lista-produtos.php">Lista de Produtos</a></li>
-                            <li><a href="sub-categorias.php">Sub Categorias</a></li>
-                            <li><a href="promocoes.php">Promoções</a></li>
-                            <li><a href="combos.php">Combos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.php">Blog</a></li>
-                    
-                    <li><a href="contatos.php">Contatos</a></li>
+                <li class="active"><a href="./index.php">Início</a></li>
+                <?php if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Cliente'){ ?>
+                <?php }else{ ?>
+                    <li><a href="crm/paginas/home.php?acao=bemvindo">CRM</a></li>
+                <?php } ?>
+                <li><a href="categorias.php">Categorias</a></li>
+                <li><a href="#">Produtos</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="produtos.php">Produtos</a></li>
+                        <li><a href="lista-produtos.php">Lista de Produtos</a></li>
+                        <li><a href="sub-categorias.php">Sub Categorias</a></li>
+                        <li><a href="promocoes.php">Promoções</a></li>
+                        <li><a href="combos.php">Combos</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="contatos.php">Contatos</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
             <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-            
             <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
             <a target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsapp_link ?>" title="<?php echo $whatsapp ?>"><i class="fa fa-whatsapp"></i></a>
         </div>
@@ -185,24 +183,23 @@ $total_item = $valor * $quantidade;
 
                            <div class="header__top__right__auth">
                             <?php 
-                     if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Cliente'){
-                 ?>
-                <a href="sistema"><i class="fa fa-user"></i> Login</a>
-            <?php }else{ ?>
-                <a target="_blank" href="sistema/painel-cliente"><i class="fa fa-user"></i> Painel</a>
-               
-            <?php } ?>
+                                if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Cliente'){
+                            ?>
+                            <a href="sistema"><i class="fa fa-user"></i> Login</a>
+                            <?php }else{ ?>
+                                <a target="_blank" href="sistema/painel-cliente"><i class="fa fa-user"></i> Painel</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container header-bottom">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="header__logo">
-                    <a href="./index.php"><img src="img/logo.png" alt=""></a>
+                    <a href="./index.php"><img src="img/logo.png" alt="" style="max-height: 66px;"></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -223,6 +220,11 @@ $total_item = $valor * $quantidade;
                     <li><a href="blog.php">Blog</a></li>
                     
                     <li><a href="contatos.php">Contatos</a></li>
+                    <?php if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Cliente'){ ?>
+                    <?php }else{ ?>
+                        <li><a href="crm/paginas/home.php?acao=bemvindo">CRM</a></li>
+                    <?php } ?>
+
                 </ul>
             </nav>
         </div>
@@ -241,7 +243,7 @@ $total_item = $valor * $quantidade;
 </div>
 </header>
 <!-- Header Section End -->
-
+<div class="header-empty-space"></div>
 
 
 

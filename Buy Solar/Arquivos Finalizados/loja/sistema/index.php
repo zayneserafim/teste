@@ -48,7 +48,7 @@
 				<div class="myform form ">
 					 <div class="logo mb-3">
 						 <div class="col-md-12 text-center">
-							<h1>Login</h1>
+							<a href="../index.php"><h1>Login</h1></a>
 						 </div>
 					</div>
                    <form action="autenticar.php" method="post" name="login">

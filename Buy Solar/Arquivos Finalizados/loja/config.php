@@ -19,9 +19,9 @@ if($url[1] == 'localhost/'){
 
 //VARIAVEIS DO BANCO DE DADOS
 $servidor = 'localhost';
-$usuario = 'root';
-$senha = '';
-$banco = 'loja';
+$usuario = 'buysol82_zayne';
+$senha = '!Bb15912357';
+$banco = 'buysol82_loja';
 
 /*
 //VARIAVEIS DO BANCO DE DADOS
